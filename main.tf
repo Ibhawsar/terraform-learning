@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "demo" {
-    bucket= "my-terraform-bucket-ishika-capgemini"
+    bucket= "my-terraform-bucket-ishika-capgemini2025"
 } 
