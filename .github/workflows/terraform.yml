@@ -12,7 +12,10 @@ on:
           - plan
           - apply
           - destroy
-
+permissions:
+  id-tokan: write
+  contents: read
+  
 jobs:
   terraform:
     runs-on: ubuntu-latest
