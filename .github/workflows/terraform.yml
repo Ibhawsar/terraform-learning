@@ -12,13 +12,14 @@ on:
           - plan
           - apply
           - destroy
-permissions:
-  id-tokan: write
-  contents: read
-  
 jobs:
   terraform:
     runs-on: ubuntu-latest
+
+
+    permissions:
+      id-token: write        # REQUIRED for OIDC
+      contents: read         # Required to checkout code
 
     steps:
       - name: Checkout code
