@@ -5,11 +5,15 @@ import httpx
 
 app =FastAPI()
 
-GITHUB_GISTS_URL = "https://api.github.com/users/octocat/gists"
+GITHUB_GISTS_URL = "https://api.github.com/users/{username}/gists"
 
 @app.get("/")
-async def get_user_gists():
-    url =GITHUB_GISTS_URL
+def home():
+    return {"message": "FastAPI Docker Public Gists API running!"}
+
+@app.get("/{username}")
+async def get_user_gists(username: str):
+    url =GITHUB_GISTS_URL.format(username=username)
 
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
