@@ -7,9 +7,9 @@ app =FastAPI()
 
 GITHUB_GISTS_URL = "https://api.github.com/users/octocat/gists"
 
-@app.get("/{username}")
-async def get_user_gists(username: str):
-    url =GITHUB_GISTS_URL.format(username=username)
+@app.get("/")
+async def get_user_gists():
+    url =GITHUB_GISTS_URL
 
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
