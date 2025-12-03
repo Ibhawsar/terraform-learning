@@ -5,7 +5,7 @@ import httpx
 
 app =FastAPI()
 
-GITHUB_GISTS_URL = "https://api.github.com/users/{username}/gists"
+GITHUB_GISTS_URL = "https://api.github.com/users/octocat/gists"
 
 @app.get("/{username}")
 async def get_user_gists(username: str):
